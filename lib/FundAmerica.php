@@ -29,5 +29,6 @@ require(dirname(__FILE__) . '/FundAmerica/APIResource.php');
 require(dirname(__FILE__) . '/FundAmerica/ACHToken.php');
 require(dirname(__FILE__) . '/FundAmerica/EscrowAgreement.php');
 require(dirname(__FILE__) . '/FundAmerica/EscrowServiceApplication.php');
+require(dirname(__FILE__) . '/FundAmerica/Offering.php');
 
 ?>
