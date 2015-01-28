@@ -3,10 +3,6 @@
 class Offering extends APIResource {
   protected static $objectName = 'offerings';
 
-  public function all() {
-    return self::get_all();
-  }
-
   public function create($options) {
     $postFields = array(
       'amount=' . $options['amount'],
@@ -28,10 +24,6 @@ class Offering extends APIResource {
       'entity[type]=' . $options['entity[type]']
     );
     return self::post($postFields);
-  }
-
-  public function find($offering_id) {
-    return self::get($offering_id);
   }
 
   public function update($id, $options) {

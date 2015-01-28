@@ -30,18 +30,18 @@ abstract class APIResource
     return json_decode($response, true);
   }
 
-  public function get($id) {
+  protected function get($id) {
     $curlopts = array(
       'id' => $id
     );
     return self::call($curlopts);
   }
 
-  public function get_all() {
+  protected function get_all() {
     return self::call();
   }
 
-  public function post($postFields) {
+  protected function post($postFields) {
     if (is_array($postFields)) {
       $postFields = join('&', $postFields);
     }
@@ -54,7 +54,7 @@ abstract class APIResource
     return self::call($curlopts);
   }
 
-  public function patch($id, $postFields) {
+  protected function patch($id, $postFields) {
     if (is_array($postFields)) {
       $postFields = join('&', $postFields);
     }
@@ -66,6 +66,14 @@ abstract class APIResource
     );
 
     return self::call($curlopts);
+  }
+
+  public function all() {
+    return self::get_all();
+  }
+
+  public function find($id) {
+    return self::get($id);
   }
 }
 
