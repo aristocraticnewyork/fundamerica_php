@@ -30,14 +30,23 @@ abstract class APIResource
     return json_decode($response, true);
   }
 
-  protected function get($id) {
+  public function delete($id) {
+    $curlopts = array(
+      'id' => $id,
+      CURLOPT_CUSTOMREQUEST => 'DELETE',
+    );
+
+    return self::call($curlopts);
+  }
+
+  public function find($id) {
     $curlopts = array(
       'id' => $id
     );
     return self::call($curlopts);
   }
 
-  protected function get_all() {
+  public function all() {
     return self::call();
   }
 
@@ -66,14 +75,6 @@ abstract class APIResource
     );
 
     return self::call($curlopts);
-  }
-
-  public function all() {
-    return self::get_all();
-  }
-
-  public function find($id) {
-    return self::get($id);
   }
 }
 
