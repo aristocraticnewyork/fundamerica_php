@@ -76,6 +76,15 @@ abstract class APIResource
 
     return self::call($curlopts);
   }
+
+  protected function formatPostFields($allowedFields, $options) {
+    $postFields = array();
+    foreach ($allowedFields as $value) {
+      if (isset($options[$value]))
+        $postFields[] = $value . '=' . $options[$value];
+    }
+    return $postFields;
+  }
 }
 
 ?>
