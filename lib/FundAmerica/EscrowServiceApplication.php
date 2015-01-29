@@ -11,6 +11,10 @@ class EscrowServiceApplication extends APIResource {
     );
     return self::post($postFields);
   }
+
+  public function delete() {
+    throw new InvalidDeleteException();
+  }
 }
 
 ?>

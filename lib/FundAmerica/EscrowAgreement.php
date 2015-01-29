@@ -7,6 +7,10 @@ class EscrowAgreement extends APIResource {
     $postFields = 'offering_id=' . $offering_id;
     return self::post($postFields);
   }
+
+  public function delete() {
+    throw new InvalidDeleteException();
+  }
 }
 
 ?>

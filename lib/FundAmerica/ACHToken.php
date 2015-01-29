@@ -12,6 +12,10 @@ class ACHToken extends APIResource {
     return self::post($postFields);
   }
 
+  public function delete() {
+    throw new InvalidDeleteException();
+  }
+
   public function find() {
     throw new InvalidFindException();
   }

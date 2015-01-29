@@ -7,6 +7,13 @@ class InvalidAllException extends Exception {
   }
 }
 
+class InvalidDeleteException extends Exception {
+  public function __construct($code = 0, Exception $previous = null) {
+    $message = 'This object does not allow delete.';
+    parent::__construct($message, $code, $previous);
+  }
+}
+
 class InvalidFindException extends Exception {
   public function __construct($code = 0, Exception $previous = null) {
     $message = 'This object does not allow find.';
